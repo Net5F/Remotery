@@ -43,13 +43,15 @@ documented just below this comment.
 
 
 // Set to 0 to not include any bits of Remotery in your build
-#ifdef PROFILING_ENABLED
-
 #ifndef RMT_ENABLED
-#define RMT_ENABLED 1
-#endif
 
+#ifdef PROFILING_ENABLED
+#define RMT_ENABLED 1
+#else
+#define RMT_ENABLED 0
 #endif // PROFILING_ENABLED
+
+#endif
 
 // Help performance of the server sending data to the client by marking this machine as little-endian 
 #ifndef RMT_ASSUME_LITTLE_ENDIAN
